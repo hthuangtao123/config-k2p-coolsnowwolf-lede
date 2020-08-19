@@ -44,7 +44,7 @@ jobs:
 
     - name: Config - official openwrt k2p build config
       run: |
-        cp .config.openwrt openwrt/.config
+        cp .config.k2p openwrt/.config
         cd openwrt
         make defconfig
 
