@@ -27,4 +27,5 @@ jobs:
     - name: Run a multi-line script
       run: |
         ls -al
+        rm -r n1
         
