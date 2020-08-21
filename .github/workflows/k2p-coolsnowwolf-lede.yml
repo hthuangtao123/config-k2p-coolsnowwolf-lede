@@ -1,7 +1,7 @@
 name: lede k2p 
 on:
   schedule:
-    - cron:  0 1 * * *
+    - cron:  0 0 * * *
   
 
     
