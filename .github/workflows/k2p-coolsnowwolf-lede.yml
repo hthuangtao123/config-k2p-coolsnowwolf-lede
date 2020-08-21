@@ -1,7 +1,7 @@
 name: lede k2p 
 on:
   schedule:
-    - cron:  0 7 * * *
+    - cron:  0 1 * * *
   
 
     
@@ -35,7 +35,7 @@ jobs:
 
     - name: Config -  k2p build config
       run: |
-        cp .config.k2p-coolsnowwolf-lede lede/.config
+        cp .config lede/
 
     - name: Download - lede build dependencies
       run: |
