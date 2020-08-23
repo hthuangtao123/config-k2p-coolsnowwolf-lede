@@ -15,7 +15,7 @@ jobs:
     - name: Checkout - clone repository
       uses: actions/checkout@v2
 
-    - name: Install - system build dependencies
+    - name: 安装依赖软件
       run: |
         sudo swapoff /swapfile || echo "no swapfile"
         sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc || echo "clean partly"
@@ -24,40 +24,44 @@ jobs:
         sudo -E apt-get -yqq autoremove --purge
         sudo -E apt-get -qq clean
 
-    - name: Download - lede source download
+    - name: 下载LEDE源码
       run: |
+        uname -r
+        
         ls -al
         rm -rf lede
         git clone https://github.com/coolsnowwolf/lede
         
-    - name: Update - lede source update and install 
+    - name: feed升级安装
       run: |
         cd lede
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
 
-    - name: Config -  k2p build config
+    - name: 准备config
       run: |
         cp .config lede/
 
-    - name: Download - lede build dependencies
+    - name: 下载dl库
       run: |
         cd lede
         make -j8 download V=s
 
-    - name: Build - make lede source
+    - name: 编译固件
       run: |
         cd lede
         make -j1 V=s
 
     - name: Remove - delete packages files
       run: |
+        ls -al
         cd lede/bin/targets/ramips/mt7621/
+        ls -al
         rm -rf packages/
         ls -hl
 
-    - name: Upload - push to artifact file
+    - name: 推送至artifact
       uses: actions/upload-artifact@v1
       with:
         name: lede-k2p
