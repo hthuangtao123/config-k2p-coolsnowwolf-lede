@@ -26,6 +26,8 @@ jobs:
 
     - name: Download - lede source download
       run: |
+        ls -al
+        rm -rf lede
         git clone https://github.com/coolsnowwolf/lede
         
     - name: Update - lede source update and install 
