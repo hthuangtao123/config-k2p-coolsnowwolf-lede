@@ -37,6 +37,21 @@ jobs:
         cd lede
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
 
 
     - name: 准备config
