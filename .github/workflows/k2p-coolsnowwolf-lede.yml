@@ -37,22 +37,36 @@ jobs:
         cd lede
         ./scripts/feeds update -a
         ./scripts/feeds install -a
+        
+    - name: feed升级安装-1
+      run: |
+        cd lede
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
+        ./scripts/feeds install -a  
+
+    - name: feed升级安装-2
+      run: |
+        cd lede
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
-
+    - name: feed升级安装-3
+      run: |
+        cd lede
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
+    - name: feed升级安装-4
+      run: |
+        cd lede
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+        
+    - name: feed升级安装-5
+      run: |
+        cd lede
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
 
     - name: 准备config
       run: |
