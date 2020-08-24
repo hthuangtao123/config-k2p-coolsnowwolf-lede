@@ -38,24 +38,11 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
-    - name: feed升级安装-1
+    - name: feed升级安装-rerun
       run: |
         cd lede
-        echo feedsupdate
         ./scripts/feeds update -a
-        echo feedinstall
         ./scripts/feeds install -a  
-
-    - name: feed升级安装-2
-      run: |
-        cd lede
-        echo feedsupdate
-        ./scripts/feeds update -a
-        echo feedinstall
-        ./scripts/feeds install -a  
-        
-         
-    
 
     - name: 准备config
       run: |
