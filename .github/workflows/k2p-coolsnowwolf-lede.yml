@@ -27,7 +27,7 @@ jobs:
     - name: 下载LEDE源码
       run: |
         uname -r
-        
+        id        
         ls -al
         rm -rf lede
         git clone https://github.com/coolsnowwolf/lede
@@ -41,7 +41,6 @@ jobs:
     - name: feed升级安装-1
       run: |
         cd lede
-        ./scripts/feeds clean
         echo feedsupdate
         ./scripts/feeds update -a
         echo feedinstall
@@ -50,21 +49,12 @@ jobs:
     - name: feed升级安装-2
       run: |
         cd lede
-        ./scripts/feeds clean
         echo feedsupdate
         ./scripts/feeds update -a
         echo feedinstall
         ./scripts/feeds install -a  
         
-    - name: feed升级安装-3
-      run: |
-       cd lede
-        ./scripts/feeds clean
-        echo feedsupdate
-        ./scripts/feeds update -a
-        echo feedinstall
-        ./scripts/feeds install -a  
-        
+         
     
 
     - name: 准备config
